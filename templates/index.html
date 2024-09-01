@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Economic Comparison: Egypt vs. Ethiopia</title>
+    <title>Economic Comparison: Mexico vs. Sweden</title>
     <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 
@@ -12,7 +12,7 @@
     <div class="container">
         <header>
             <h1>Economic Comparison</h1>
-            <p>Comparing key economic indicators between Egypt and Ethiopia</p>
+            <p>Comparing key economic indicators between Mexico and Sweden</p>
         </header>
 
         <main>
@@ -21,35 +21,35 @@
                     <thead>
                         <tr>
                             <th>Indicator</th>
-                            <th>Egypt</th>
-                            <th>Ethiopia</th>
+                            <th>Mexico</th>
+                            <th>Sweden</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>GDP Growth Rate</td>
-                            <td>{{ egypt_data['gdp_growth'] }}%</td>
-                            <td>{{ ethiopia_data['gdp_growth'] }}%</td>
+                            <td>Consumer Spending</td>
+                            <td>{{ mexico_data['Consumer Spending'] }}</td>
+                            <td>{{ sweden_data['Consumer Spending'] }}</td>
                         </tr>
                         <tr>
-                            <td>Inflation Rate</td>
-                            <td>{{ egypt_data['inflation_rate'] }}%</td>
-                            <td>{{ ethiopia_data['inflation_rate'] }}%</td>
+                            <td>Inflation Rate MOM</td>
+                            <td>{{ mexico_data['Inflation Rate MOM'] }}%</td>
+                            <td>{{ sweden_data['Inflation Rate MOM'] }}%</td>
                         </tr>
                         <tr>
-                            <td>Unemployment Rate</td>
-                            <td>{{ egypt_data['unemployment_rate'] }}%</td>
-                            <td>{{ ethiopia_data['unemployment_rate'] }}%</td>
+                            <td> Military Expenditure</td>
+                            <td>{{ mexico_data['Military Expenditure'] }}</td>
+                            <td>{{ sweden_data['Military Expenditure'] }}</td>
                         </tr>
                         <tr>
-                            <td>External Debt (USD Billion)</td>
-                            <td>{{ egypt_data['external_debt'] }}</td>
-                            <td>{{ ethiopia_data['external_debt'] }}</td>
+                            <td> Long Term Unemployment Rate  </td>
+                            <td>{{ mexico_data['Long Term Unemployment Rate'] }}%</td>
+                            <td>{{ sweden_data['Long Term Unemployment Rate'] }}%</td>
                         </tr>
                         <tr>
-                            <td>Current Account Balance (% of GDP)</td>
-                            <td>{{ egypt_data['current_account_balance'] }}%</td>
-                            <td>{{ ethiopia_data['current_account_balance'] }}%</td>
+                            <td>Retirement Age Men</td>
+                            <td>{{ mexico_data['Retirement Age Men'] }}</td>
+                            <td>{{ sweden_data['Retirement Age Men'] }}</td>
                         </tr>
                     </tbody>
                 </table>
