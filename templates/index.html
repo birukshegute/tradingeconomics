@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Comparison: Egypt vs. Ethiopia</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Economic Comparison</h1>
+            <p>Comparing key economic indicators between Egypt and Ethiopia</p>
+        </header>
+
+        <main>
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Indicator</th>
+                            <th>Egypt</th>
+                            <th>Ethiopia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GDP Growth Rate</td>
+                            <td>{{ egypt_data['gdp_growth'] }}%</td>
+                            <td>{{ ethiopia_data['gdp_growth'] }}%</td>
+                        </tr>
+                        <tr>
+                            <td>Inflation Rate</td>
+                            <td>{{ egypt_data['inflation_rate'] }}%</td>
+                            <td>{{ ethiopia_data['inflation_rate'] }}%</td>
+                        </tr>
+                        <tr>
+                            <td>Unemployment Rate</td>
+                            <td>{{ egypt_data['unemployment_rate'] }}%</td>
+                            <td>{{ ethiopia_data['unemployment_rate'] }}%</td>
+                        </tr>
+                        <tr>
+                            <td>External Debt (USD Billion)</td>
+                            <td>{{ egypt_data['external_debt'] }}</td>
+                            <td>{{ ethiopia_data['external_debt'] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Current Account Balance (% of GDP)</td>
+                            <td>{{ egypt_data['current_account_balance'] }}%</td>
+                            <td>{{ ethiopia_data['current_account_balance'] }}%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="mt-8 text-center">
+                <a href="#" class="btn">Compare More Indicators</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Economic Comparison from Trading Economics. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
