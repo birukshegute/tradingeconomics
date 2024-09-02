@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Economic Comparison: Mexico vs. Sweden</title>
     <link rel="stylesheet" href="../static/css/styles.css">
 </head>
-
 <body>
     <div class="container">
         <header>
@@ -28,28 +26,43 @@
                     <tbody>
                         <tr>
                             <td>Consumer Spending</td>
-                            <td>{{ mexico_data['Consumer Spending'] }}</td>
-                            <td>{{ sweden_data['Consumer Spending'] }}</td>
+                            <td>{{ mexico_data.get('Consumer Spending', {}).get('LatestValue', 'N/A') }} {{ mexico_data.get('Consumer Spending', {}).get('Unit', '') }}</td>
+                            <td>{{ sweden_data.get('Consumer Spending', {}).get('LatestValue', 'N/A') }} {{ sweden_data.get('Consumer Spending', {}).get('Unit', '') }}</td>
                         </tr>
                         <tr>
-                            <td>Inflation Rate MOM</td>
-                            <td>{{ mexico_data['Inflation Rate MOM'] }}%</td>
-                            <td>{{ sweden_data['Inflation Rate MOM'] }}%</td>
+                            <td>Core Inflation Rate</td>
+                            <td>{{ mexico_data.get('Core Inflation Rate', {}).get('LatestValue', 'N/A') }} {{ mexico_data.get('Core Inflation Rate', {}).get('Unit', '') }}</td>
+                            <td>{{ sweden_data.get('Core Inflation Rate', {}).get('LatestValue', 'N/A') }} {{ sweden_data.get('Core Inflation Rate', {}).get('Unit', '') }}</td>
                         </tr>
                         <tr>
-                            <td> Military Expenditure</td>
-                            <td>{{ mexico_data['Military Expenditure'] }}</td>
-                            <td>{{ sweden_data['Military Expenditure'] }}</td>
+                            <td>Employment Rate</td>
+                            <td>{{ mexico_data.get('Employment Rate', {}).get('LatestValue', 'N/A') }} {{ mexico_data.get('Employment Rate', {}).get('Unit', '') }}</td>
+                            <td>{{ sweden_data.get('Employment Rate', {}).get('LatestValue', 'N/A') }} {{ sweden_data.get('Employment Rate', {}).get('Unit', '') }}</td>
                         </tr>
                         <tr>
-                            <td> Long Term Unemployment Rate  </td>
-                            <td>{{ mexico_data['Long Term Unemployment Rate'] }}%</td>
-                            <td>{{ sweden_data['Long Term Unemployment Rate'] }}%</td>
+                            <td>Balance of Trade</td>
+                            <td>{{ mexico_data.get('Balance of Trade', {}).get('LatestValue', 'N/A') }} {{ mexico_data.get('Balance of Trade', {}).get('Unit', '') }}</td>
+                            <td>{{ sweden_data.get('Balance of Trade', {}).get('LatestValue', 'N/A') }} {{ sweden_data.get('Balance of Trade', {}).get('Unit', '') }}</td>
                         </tr>
                         <tr>
-                            <td>Retirement Age Men</td>
-                            <td>{{ mexico_data['Retirement Age Men'] }}</td>
-                            <td>{{ sweden_data['Retirement Age Men'] }}</td>
+                            <td>Gold Reserves</td>
+                            <td>{{ mexico_data.get('Gold Reserves', {}).get('LatestValue', 'N/A') }} {{ mexico_data.get('Gold Reserves', {}).get('Unit', '') }}</td>
+                            <td>{{ sweden_data.get('Gold Reserves', {}).get('LatestValue', 'N/A') }} {{ sweden_data.get('Gold Reserves', {}).get('Unit', '') }}</td>
+                        </tr>
+                        <tr>
+                            <td>Corruption Rank</td>
+                            <td>{{ mexico_data.get('Corruption Rank', {}).get('LatestValue', 'N/A') }} {{ mexico_data.get('Corruption Rank', {}).get('Unit', '') }}</td>
+                            <td>{{ sweden_data.get('Corruption Rank', {}).get('LatestValue', 'N/A') }} {{ sweden_data.get('Corruption Rank', {}).get('Unit', '') }}</td>
+                        </tr>
+                        <tr>
+                            <td>GDP</td>
+                            <td>{{ mexico_data.get('GDP', {}).get('LatestValue', 'N/A') }} {{ mexico_data.get('GDP', {}).get('Unit', '') }}</td>
+                            <td>{{ sweden_data.get('GDP', {}).get('LatestValue', 'N/A') }} {{ sweden_data.get('GDP', {}).get('Unit', '') }}</td>
+                        </tr>
+                        <tr>
+                            <td>GDP Growth Rate</td>
+                            <td>{{ mexico_data.get('GDP Growth Rate', {}).get('LatestValue', 'N/A') }} {{ mexico_data.get('GDP Growth Rate', {}).get('Unit', '') }}</td>
+                            <td>{{ sweden_data.get('GDP Growth Rate', {}).get('LatestValue', 'N/A') }} {{ sweden_data.get('GDP Growth Rate', {}).get('Unit', '') }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -65,5 +78,4 @@
         </footer>
     </div>
 </body>
-
 </html>

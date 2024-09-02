@@ -3,13 +3,12 @@ from dotenv import load_dotenv
 import os
 import requests
 
-app = Flask(__name__)
-
 load_dotenv()
 API_KEY = os.getenv('API_KEY')
 API_BASE_URL = 'https://api.tradingeconomics.com'
 
-def fetch_economic_data(country, indicators):
+app = Flask(__name__)
+def fetch_economic_data(country, categories):
     try:
         response = requests.get(
             f"{API_BASE_URL}/country/{country}",
@@ -18,15 +17,20 @@ def fetch_economic_data(country, indicators):
         response.raise_for_status()
         data = response.json()
 
+        
+        # Initialize a dictionary to store the extracted data
         extracted_data = {}
-        for indicator in indicators:
+
+        for category in categories:
             for item in data:
-                if 'category' in item and item['category'].lower() == indicator.lower():
-                    extracted_data[indicator] = item.get('value', 'N/A')
+                if item.get('Category') == category:
+                    extracted_data[category] = {
+                        'LatestValue': item.get('LatestValue', 'N/A'),
+                        'Unit': item.get('Unit', ''),
+                        'Date': item.get('LatestValueDate', '')
+                    }
                     break
-                elif 'indicator' in item and item['indicator'].lower() == indicator.lower():
-                    extracted_data[indicator] = item.get('value', 'N/A')
-                    break
+
         print(f"Extracted data for {country}: {extracted_data}")
         return extracted_data
     except requests.exceptions.RequestException as e:
@@ -35,18 +39,21 @@ def fetch_economic_data(country, indicators):
 
 @app.route('/')
 def index():
-    indicators = [
+    categories = [
         'Consumer Spending',
-        'Inflation Rate MOM',
-        'Military Expenditure',
-        'Long Term Unemployment Rate',
-        'Retirement Age Men'
+        'Core Inflation Rate',
+        'Employment Rate',
+        'Balance of Trade',
+        'Gold Reserves',
+        'Corruption Rank',
+        'GDP',
+        'GDP Growth Rate'
     ]
+        
+        
 
-    mexico_data = fetch_economic_data('mexico', indicators)
-    sweden_data = fetch_economic_data('sweden', indicators)
+    mexico_data = fetch_economic_data('mexico', categories)
+    sweden_data = fetch_economic_data('sweden', categories)
 
     return render_template('index.html', mexico_data=mexico_data, sweden_data=sweden_data)
-
-if __name__ == '__main__':
-    app.run(debug=True)
+    
